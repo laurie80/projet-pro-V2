@@ -27,10 +27,10 @@ if (isset($_POST["deleteButtonPicture"])) {
 
     if (file_exists($imagesFiles)) {
         if (unlink($imagesFiles)) {
-            $arrayErrors = $imagesFiles . "supprimer avec succés";
+            $_SESSION["deleteImageMessage"] = "success";
         }
     } else {
-        $arrayErrors = "Echec de la suppression de" . $nameImg;
+        $_SESSION["deleteImageMessage"] = "error";
     }
 }
 
@@ -48,10 +48,10 @@ if (isset($_POST["deleteButtonVideo"])) {
 
     if (file_exists($videoFiles)) {
         if (unlink($videoFiles)) {
-            $arrayErrors = $videoFiles . "supprimer avec succés";
+            $_SESSION["deleteVideoMessage"] = "success";
         }
     } else {
-        $arrayErrors = "Echec de la suppression de" . $nameVideo;
+        $_SESSION["deleteVideoMessage"] = "error";
     }
 }
 
@@ -61,4 +61,3 @@ if (isset($_POST["deleteButtonVideo"])) {
 
 $informationsPicture = $Picture->getInformationsImage();
 $informationsVideo = $Video->getInformationsVideo();
-

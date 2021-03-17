@@ -23,6 +23,7 @@ if(isset($_POST["validateButtonFile"]) && !empty($_POST["validateButtonFile"])) 
     $pictureTitle = isset($_POST['newNameFile']) ? ($_POST["newNameFile"]) : "";
     $updateNameFile = $Picture->modifyNamePicture($id, $pictureTitle);
     header("Location: ../Views/preview_galery.php");
+    $_SESSION["updateImageName"] = "success";
 } else {
     $informationsPicture = $Picture->getOneImageInformations($id);
 }

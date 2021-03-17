@@ -36,12 +36,14 @@ require "../Controllers/preview_galery_controller.php";
     <p class="title text-center">Bienvenue <?= $_SESSION["admin"]["userName"] ?></p>
     <p class="title text-center">Gestion de galeries</p>
 
+    <!-- AFFICHAGE DES DIFFERENTS MESSAGES DE SUCCESS OU ERREURS -->
+
     <?php
     if (isset($_SESSION["uploadImageMessage"])) {
         if ($_SESSION["uploadImageMessage"] == "success") {
     ?>
             <div class="alert alert-success alert-dismissible fade show text-center mt-3" role="alert">
-                <p>Photo téléchargé avec succés.</p>
+                <p>Photo téléchargée avec succés.</p>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -53,11 +55,55 @@ require "../Controllers/preview_galery_controller.php";
     ?>
 
     <?php
+    if (isset($_SESSION["deleteImageMessage"])) {
+        if ($_SESSION["deleteImageMessage"] == "success") {
+    ?>
+            <div class="alert alert-success alert-dismissible fade show text-center mt-3" role="alert">
+                <p>Photo supprimée avec succés</p>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <?php
+            unset($_SESSION["deleteImageMessage"]);
+        } else {
+            if ($_SESSION["deleteImageMessage"] == "error") {
+            ?>
+                <div class="alert alert-danger alert-dismissible fade show text-center mt-3" role="alert">
+                    <p>Erreur lors de la suppression de la photo.</p>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+    <?php
+                unset($_SESSION["deleteImageMessage"]);
+            }
+        }
+    }
+    ?>
+
+    <?php
+    if (isset($_SESSION["updateImageName"])) {
+        if ($_SESSION["updateImageName"] == "success") {
+    ?>
+            <div class="alert alert-success alert-dismissible fade show text-center mt-3" role="alert">
+                <p>Le nom de votre photo à bien été modifié.</p>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+    <?php
+            unset($_SESSION["updateImageName"]);
+        }
+    }
+    ?>
+
+    <?php
     if (isset($_SESSION["uploadVideoMessage"])) {
         if ($_SESSION["uploadVideoMessage"] == "success") {
     ?>
             <div class="alert alert-success alert-dismissible fade show text-center mt-3" role="alert">
-                <p>Vidéo téléchargé avec succés.</p>
+                <p>Vidéo téléchargée avec succés.</p>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -67,6 +113,52 @@ require "../Controllers/preview_galery_controller.php";
         }
     }
     ?>
+
+    <?php
+    if (isset($_SESSION["deleteVideoMessage"])) {
+        if ($_SESSION["deleteVideoMessage"] == "success") {
+    ?>
+            <div class="alert alert-success alert-dismissible fade show text-center mt-3" role="alert">
+                <p>Vidéo supprimée avec succés</p>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <?php
+            unset($_SESSION["deleteVideoMessage"]);
+        } else {
+            if ($_SESSION["deleteVideoMessage"] == "error") {
+            ?>
+                <div class="alert alert-danger alert-dismissible fade show text-center mt-3" role="alert">
+                    <p>Erreur lors de la suppression de la vidéo.</p>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+    <?php
+                unset($_SESSION["deleteVideoMessage"]);
+            }
+        }
+    }
+    ?>
+
+    <?php
+    if (isset($_SESSION["updateVideoName"])) {
+        if ($_SESSION["updateVideoName"] == "success") {
+    ?>
+            <div class="alert alert-success alert-dismissible fade show text-center mt-3" role="alert">
+                <p>Le nom de votre vidéo à bien été modifié.</p>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+    <?php
+            unset($_SESSION["updateVideoName"]);
+        }
+    }
+    ?>
+
+    <!-- AFFICHAGE DES GALERIES -->
 
     <div class="row align-content-center justify-content-center">
         <p class="titleGalery">Galerie Photos</p>

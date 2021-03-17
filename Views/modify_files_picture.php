@@ -25,6 +25,24 @@ require "../Controllers/modify_files_picture_controller.php";
 
     <p class="title text-center">Veuillez modifier le nom de votre fichier</p>
 
+        <?php
+    if (isset($_SESSION["updateImageName"])) {
+        if ($_SESSION["updateImageName"] == "error") {
+    ?>
+            <div class="alert alert-danger alert-dismissible fade show text-center mt-3" role="alert">
+                <p>Erreur lors de la modification du nom de la photo, veuillez réessayer.</p>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+    <?php
+            unset($_SESSION["updateImageName"]);
+        }
+    }
+    ?>
+
+    <!-- AFFICHAGE DE L IMAGE SELECTIONNE, DE SON NOM ACTUEL ET DU CHAMP DE MOFICATION -->
+
     <div class="mx-auto text-center">
         <div>
             <img class="boxPicture" src="../uploadImg/<?= $informationsPicture["picture_name"] . $informationsPicture["type_extension"] ?>">
