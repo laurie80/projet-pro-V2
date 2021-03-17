@@ -2,11 +2,11 @@
 
 session_start();
 
-if(!isset($_SESSION["admin"])) {
+if (!isset($_SESSION["admin"])) {
     header("Location: ../index.php");
 }
 
-if(isset($_GET["action"]) && $_GET["action"] == "disconnect") {
+if (isset($_GET["action"]) && $_GET["action"] == "disconnect") {
     unset($_SESSION["admin"]);
     session_destroy();
     header("Location: ../index.php");
@@ -28,8 +28,7 @@ if (isset($_FILES['fileToUpload']) && $_FILES['fileToUpload']['error'] == 0 && i
     $infosfichier = pathinfo($_FILES['fileToUpload']['name']);
     $extension_upload = mime_content_type($_FILES['fileToUpload']['tmp_name']);
     $extensions_autorisees = [
-        'image/jpg', 'image/jpeg', 'image/gif', 'image/png', 'image/ai', 'image/eps',
-        'image/pdf', 'image/psd', 'image/tif', 'image/svg'
+        'image/jpg', 'image/jpeg', 'image/png', 'image/gif'
     ];
     if (in_array($extension_upload, $extensions_autorisees)) {
         $Extensions = new Extensions();
@@ -41,9 +40,9 @@ if (isset($_FILES['fileToUpload']) && $_FILES['fileToUpload']['error'] == 0 && i
         move_uploaded_file($_FILES['fileToUpload']['tmp_name'], '../uploadImg/' . $nameImg . $extensionFile);
         $GaleriePicture->addPicture($nameImg, $date, $pictureTitle, $id["id"]);
         header("Location: ../Views/preview_galery.php");
-        $message = "Le fichier à bien était téléchargé !";
+        $_SESSION["uploadImageMessage"] = "success";
     } else {
-        $message = "Une erreur est survenue lors du téléchargement";
+        $_SESSION["uploadImageMessage"] = "error";
     }
 }
 
@@ -71,10 +70,8 @@ if (isset($_FILES['fileVideoToUpload']) && $_FILES['fileVideoToUpload']['error']
         move_uploaded_file($_FILES['fileVideoToUpload']['tmp_name'], '../uploadVideo/' . $nameVideo . $extensionFile);
         $GalleryVideo->addVideo($nameVideo, $date, $videoTitle, $id["id"]);
         header("Location: ../Views/preview_galery.php");
-        $message = "Le fichier à bien était téléchargé !";
+        $_SESSION["uploadVideoMessage"] = "success";
     } else {
-        $message = "Une erreur est survenue lors du téléchargement";
+        $_SESSION["uploadVideoMessage"] = "error";
     }
 }
-
-

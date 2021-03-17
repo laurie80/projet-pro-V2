@@ -35,6 +35,39 @@ require "../Controllers/preview_galery_controller.php";
 
     <p class="title text-center">Bienvenue <?= $_SESSION["admin"]["userName"] ?></p>
     <p class="title text-center">Gestion de galeries</p>
+
+    <?php
+    if (isset($_SESSION["uploadImageMessage"])) {
+        if ($_SESSION["uploadImageMessage"] == "success") {
+    ?>
+            <div class="alert alert-success alert-dismissible fade show text-center mt-3" role="alert">
+                <p>Photo téléchargé avec succés.</p>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+    <?php
+            unset($_SESSION["uploadImageMessage"]);
+        }
+    }
+    ?>
+
+    <?php
+    if (isset($_SESSION["uploadVideoMessage"])) {
+        if ($_SESSION["uploadVideoMessage"] == "success") {
+    ?>
+            <div class="alert alert-success alert-dismissible fade show text-center mt-3" role="alert">
+                <p>Vidéo téléchargé avec succés.</p>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+    <?php
+            unset($_SESSION["uploadVideoMessage"]);
+        }
+    }
+    ?>
+
     <div class="row align-content-center justify-content-center">
         <p class="titleGalery">Galerie Photos</p>
         <div class="card-column col-10 m-auto">
@@ -103,7 +136,10 @@ require "../Controllers/preview_galery_controller.php";
         </div>
     </div>
 
-
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous">
+    </script>
     <script src="../assets/js/script-preview_galery.js"></script>
 
 </body>
