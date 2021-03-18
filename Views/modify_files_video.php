@@ -26,7 +26,6 @@ require "../Controllers/modify_files_video_controller.php";
     <p class="title text-center">Veuillez modifier le nom de votre fichier</p>
 
     <?php
-    var_dump($_SESSION);
     if (isset($_SESSION["updateVideoName"])) {
         if ($_SESSION["updateVideoName"] == "error") {
     ?>

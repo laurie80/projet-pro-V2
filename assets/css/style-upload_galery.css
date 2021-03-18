@@ -30,7 +30,7 @@
     position: absolute;
     top: 2rem;
     left: 2rem;
-    background-color: #fcc200;
+    background-color: #EAC435;
     color: white;
     border: none;
     padding: 1.5rem 2rem;
@@ -42,7 +42,7 @@
 }
 
 .menu:hover {
-    background: #35d0ba;
+    background: #03CEA4;
 }
 
 nav {
@@ -75,7 +75,7 @@ ul li .navLink {
 }
 
 ul li .navLink:hover {
-    color: #fcc200;
+    color: #EAC435;
 }
 
 .open {
@@ -125,7 +125,7 @@ ul li .navLink:hover {
     margin-bottom: 2rem;
     margin-left: 0;
     font-family: "bladesinger", sans-serif;
-    color: #35d0ba;
+    color: #03CEA4;
 }
 
 #imgPreview {
@@ -168,7 +168,7 @@ ul li .navLink:hover {
     margin-right: 0;
     padding: 0;
     font-size: 2.8rem;
-    color: #fcc200;
+    color: #EAC435;
     text-transform: uppercase;
 }
 
@@ -186,9 +186,9 @@ input[type="file"] {
 }
 
 input[type=file]::-webkit-file-upload-button {
-    background-color: #35d0ba;
+    background-color: #03CEA4;
     border-radius: 30px;
-    color: #fcc200;
+    color: #EAC435;
     padding: 0.5rem;
     margin-bottom: 1rem;
     text-transform: uppercase;
@@ -201,19 +201,19 @@ input[type=file]::-webkit-file-upload-button {
     border-radius: 30px;
     width: 200px;
     height: 70px;
-    background-color: #35d0ba;
+    background-color: #03CEA4;
     margin-top: 1rem;
     margin-bottom: 2rem;
     font-size: 1.4rem;
-    color: #fcc200;
+    color: #EAC435;
     text-transform: uppercase;
     font-weight: bold;
 }
 
 .btnPreviewGalery {
-    background-color: #35d0ba;
+    background-color: #03CEA4;
     border-radius: 30px;
-    color: #fcc200;
+    color: #EAC435;
     padding: 0.5rem;
     margin-bottom: 1rem;
     text-transform: uppercase;

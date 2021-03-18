@@ -28,7 +28,7 @@ PAGE ACCUEIL
     position: absolute;
     top: 2rem;
     left: 2rem;
-    background-color: #fcc200;
+    background-color: #EAC435;
     color: white;
     border: none;
     padding: 1.5rem 2rem;
@@ -40,7 +40,7 @@ PAGE ACCUEIL
 }
 
 .menu:hover {
-    background: #35d0ba;
+    background: #03CEA4;
 }
 
 nav {
@@ -73,7 +73,7 @@ ul li .navLink {
 }
 
 ul li .navLink:hover {
-    color: #fcc200;
+    color: #EAC435;
 
 }
 
@@ -140,7 +140,7 @@ ul li .navLink:hover {
 #presentation h1 {
     margin-top: 2rem;
     margin-bottom: 2rem;
-    color: #35d0ba;
+    color: #03CEA4;
     font-size: 4rem;
     font-family: "bladesinger", sans-serif;
 }
@@ -172,7 +172,7 @@ ul li .navLink:hover {
 #galleryPict h1 {
     margin-top: 2rem;
     margin-bottom: 2rem;
-    color: #35d0ba;
+    color: #03CEA4;
     font-size: 4rem;
     font-family: "bladesinger", sans-serif;
 }
@@ -206,9 +206,9 @@ ul li .navLink:hover {
     font-family: curve;
     line-height: 8rem;
     letter-spacing: 2px;
-    color: #1818CC;
+    color: #03CEA4;
     font-style: italic;
-    font-family: "AlexBrush-Regular";
+    margin-top: 5rem;
 }
 
 #citations:before {
@@ -221,16 +221,16 @@ ul li .navLink:hover {
 
 #author {
     font-size: 1.5rem;
-    color: #1818CC;
+    color: #03CEA4;
     margin-top: 3rem;
     margin-bottom: 3rem;
     font-family: "glimmer-of-light";
 }
 
 .btn-citation {
-    background: #35d0ba;
-    background: -webkit-linear-gradient(to right, #35d0ba, #b7f1e9);
-    background: linear-gradient(to right, #35d0ba, #b7f1e9);
+    background: #03CEA4;
+    background: -webkit-linear-gradient(to right, #03CEA4, #b7f1e9);
+    background: linear-gradient(to right, #03CEA4, #b7f1e9);
     cursor: pointer;
     border-radius: 3rem;
     color: white;
@@ -252,7 +252,7 @@ ul li .navLink:hover {
 #galleryVid h1 {
     margin-top: 2rem;
     margin-bottom: 2rem;
-    color: #35d0ba;
+    color: #03CEA4;
     font-size: 4rem;
     font-family: "bladesinger", sans-serif;
 }
@@ -280,7 +280,7 @@ ul li .navLink:hover {
 #equipments h1 {
     margin-top: 2rem;
     margin-bottom: 2rem;
-    color: #35d0ba;
+    color: #03CEA4;
     font-size: 4rem;
     font-family: "bladesinger", sans-serif;
 }
@@ -306,7 +306,7 @@ ul li .navLink:hover {
 .nameEquipments {
     margin-bottom: 2rem;
     text-transform: uppercase;
-    color: #fcc200;
+    color: #EAC435;
     font-size: 2.5rem;
     font-family: "bladesinger", sans-serif;
 }
@@ -336,7 +336,7 @@ ul li .navLink:hover {
 #contact h1 {
     margin-top: 2rem;
     margin-bottom: 2rem;
-    color: #35d0ba;
+    color: #03CEA4;
     font-size: 4rem;
     font-family: "bladesinger", sans-serif;
 }
@@ -368,7 +368,7 @@ textarea {
     padding: 1.5rem;
     width: 10rem;
     border-radius: 40px;
-    background-color: #fcc200;
+    background-color: #EAC435;
     color: #1818CC;
     font-size: 1.5rem;
     font-weight: bold;
@@ -379,7 +379,7 @@ textarea {
 
 #infosFooter {
     /* display: flex; */
-    background-color: #fcc200;
+    background-color: #EAC435;
     margin-top: 1rem;
     margin-right: 0;
     margin-bottom: 1rem;
@@ -450,6 +450,7 @@ textarea {
         font-size: 2.1rem;
         line-height: 3.5rem;
         letter-spacing: 1.5px;
+        margin-top: 2rem;
     }
 
     .btn-citation {
@@ -512,6 +513,10 @@ textarea {
         font-size: 4rem;
         line-height: 5.5rem;
         letter-spacing: 1px;
+    }
+
+    #gridImgContainer {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .boxVideos {
